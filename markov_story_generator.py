@@ -3,7 +3,7 @@ from typing import Dict, List, Tuple
 from copy import deepcopy
 
 #MARKOV_WORDS: number of words in markov dictionary key. 
-MARKOV_WORDS = 2
+MARKOV_WORDS = 6
 
 #User inputs new names. Used in file_parse.
 NEW_NAMES:List[str] = ["Ray","Gatsby","Kanye","West","Kim","Bruce/Caitlyn","Jenner","Kardasian","Kris"]
@@ -20,9 +20,6 @@ CHARACTER_NAMES = {
                     'Abraham':NEW_NAMES[2],'Van Helsing':NEW_NAMES[3],
                     'Dracula':NEW_NAMES[1]
                     }
-
-#To start the story.
-SEED = "The secret"
 
 NOVEL_LENGTH = 4000 #words in novel.
 
@@ -159,7 +156,7 @@ def main(args:List[str]) -> int:
     markov_dict:Dict[Tuple[str,...],Dict[str,float]] = {}
     for arg in args[1:]:
         text = file_parse(arg)
-        seed = text.split()[0:2]
+        seed = text.split()[0:MARKOV_WORDS]
         markov_dict = markov_builder(markov_dict, text)
 
     markov_dict = convert_freq_to_prob(markov_dict)
