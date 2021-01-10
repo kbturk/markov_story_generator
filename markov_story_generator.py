@@ -114,11 +114,12 @@ def next_great_americian_novel(markov_dict:Dict[Tuple[str,...],List[str]],seed:L
 
     new_masterpiece += " ".join(novel)
     total_periods = new_masterpiece.count('.')
-    print(total_periods)
-    '''        if i%para_length == 0:
+    print_masterpiece = new_masterpiece.split('.')
+    for sentence in print_masterpiece:
+        if i%para_length == 0:
             new_masterpiece +="\n\n"
             para_length = random.randint(4,8)
-    '''
+    
     return new_masterpiece
 
 def main(args:List[str]) -> int:
