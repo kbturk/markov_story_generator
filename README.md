@@ -1,6 +1,6 @@
 <h1>Markov Story Teller</h1>
 
-<h2>This is a small text generator that uses a homespun markov generator to create new text.</h2>
+<h4>This is a small text generator that uses a homespun markov generator to create new text.</h4>
 <p>This is a work in progress.</p>
 <p>There are two python files in this repository:
 <ul>
